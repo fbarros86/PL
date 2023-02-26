@@ -47,8 +47,6 @@ def printTabela(nome, parametros, valores):
     # Hide axes
     ax.axis('off')
     
-
-
     # Create table
     table = ax.table(cellText=data, loc='center')
 
