@@ -18,7 +18,6 @@ def main():
                     soma+=num
                 elif i<lLinha-2 and linha[i:i+3].lower()=="off":
                     on = False
-                    soma=0
                     i+=2
                 elif linha[i]=="=":
                     print(soma)
@@ -26,6 +25,8 @@ def main():
                 if i<lLinha-1 and linha[i:i+2].lower()=="on":
                     on = True
                     i+=1
+                elif linha[i]=="=":
+                    print(soma)
             i+=1
         linha=input()
                         
