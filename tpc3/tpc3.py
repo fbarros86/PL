@@ -58,7 +58,7 @@ def main():
             nprocessos+=1
             data = re.search(r"::(\d+)-.*?::",line).group(1)
             nome = re.search(r"::([A-Za-z]+)[A-Za-z ]*?([A-Za-z]+)::",line).groups()
-            rel = re.findall(",(\w[A-Za-z ]*\w)\.",line) 
+            rel = re.findall(",(\w[A-Za-z ]*\w)\. Proc.",line) 
             if (data not in datas): datas[data]=0
             datas[data]+=1
             seculo= getSeculo(int(data))
@@ -97,7 +97,8 @@ def main():
             print(top5Names(seculosnomes[seculo][0],seculosnomes[seculo][1]))
         elif saida == 4:
             relacao = input("Introduza a relação-> ").lower()
-            print(relacoes[relacao])
+            if relacao in relacoes: print(relacoes[relacao])
+            else: print(0)
             input()
         elif saida == 5:
             toJson()
