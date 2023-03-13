@@ -1,9 +1,9 @@
 import re
 import json
 
-file=open("file5.csv")
+file=open("file2.csv")
 lines = file.readlines()
-groups = re.findall(r"\b([\w]+)(?:{([\d,]+)}(?:::(\w+))?)?\b",lines[0])
+groups = re.findall(r"\b([\w]+)(?:{([\d,]+)}(?:::(\w+))?)?(?:\b|,)",lines[0])
 print(groups)
 objetos=[]
 for line in lines[1:]:
